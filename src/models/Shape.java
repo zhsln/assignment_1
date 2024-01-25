@@ -39,14 +39,5 @@ public class Shape {
         return longestSide;
     }
     // Method to get the average length of the sides
-    public double getAverageSide() {
-        double totalLength = 0;
-        for (int i = 0; i < pointArrayList.size() - 1; i++) {
-            totalLength += pointArrayList.get(i).distanceTo(pointArrayList.get(i + 1));
-        }
-        // Add the distance from the last point to the first one
-        totalLength += pointArrayList.get(pointArrayList.size() - 1).distanceTo(pointArrayList.get(0));
-
-        return totalLength / pointArrayList.size();
-    }
+    public double getAverageSide() { return calculatePerimeter() / pointArrayList.size(); }
 }
